@@ -18,7 +18,25 @@ https://d14b57273628421ea7459448de61d3c0.vfs.cloud9.us-east-1.amazonaws.com/hell
 
 C9のBuilt inはどこがルートかわからなかったので断念
 
+
 ## Gitの設定
+### SSHの設定
+httpsのアクセスはなんか切れるのでSSHで接続する
+codecommitの接続方法をよく読むこと
+1. C9上でkeyを作成する
+1. XXX.pubを開いてコピーしてAWSコンソールのユーザ情報のSSHアクセスにコピペpublic
+2. .sshの下にconfigって名前でファイル作成して下記を記入
+> Host git-codecommit.*.amazonaws.com  
+> User Your-IAM-SSH-Key-ID-Here  
+> IdentityFile ~/.ssh/Your-Private-Key-File-Name-Here  
+
+1. SSHでログインしてみる 
+> ssh git-codecommit.ap-northeast-1.amazonaws.com
+1. なんか聞かれるのでyes
+2. .git/confgi の中がのremortアクセス先がhttps://だったらssh://に変更
+
+
+
 ### gitignoreの設定
 下記のコマンドを実行する※商用にはこのファイルもアップしないこと
 > echo "/node_modules " >> .gitignore
