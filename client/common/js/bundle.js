@@ -280,7 +280,7 @@ eval("const hello = __webpack_require__(/*! hello */ \"./src/node_modules/hello/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = function () {\n    console.log(\"hello module 復帰777\");\n\n    //document.body.innerHTML = \"Hello world Bundle 99999999\";\n    document.body.style.backgroundColor = \"cc9900\";\n    document.body.style.color = \"#ffff00\";\n};\n\n//# sourceURL=webpack:///./src/node_modules/hello/index.js?");
+eval("module.exports = function () {\n    console.log(\"hello module 復帰777\");\n\n    //document.body.innerHTML = \"Hello world Bundle 99999999\";\n    document.body.style.backgroundColor = \"cc9900\";\n    document.body.style.color = \"#ff6600\";\n};\n\n//# sourceURL=webpack:///./src/node_modules/hello/index.js?");
 
 /***/ }),
 

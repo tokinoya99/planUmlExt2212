@@ -69,9 +69,11 @@ PJ開始した後はやらないこと
 
 ## 追加CSSの設置
 自分でLESSを記述してCSSを追加する場合
-> src/style/less/*less
+> "src/style/less/*less "
+
 にファイル記述していく
 動きは下記
+
 1. lessをコンパイル
 1. semantic-uiのファイルをマージ
 1. テーマファイルのパスを通すように置換
@@ -80,6 +82,8 @@ PJ開始した後はやらないこと
   実際はCDNにアップするので商用のファイルも作成する必要がある
 
 ## codemirror(テキスト編集ライブラリ)
+***** 多分消す *****
+
 1. ライブラリは下記を使う
 1. option  
 http://shiroit.blog.fc2.com/blog-entry-30.html
@@ -93,14 +97,11 @@ https://tmg0525.hatenadiary.jp/entry/2018/04/15/223000
 いったん保留
 
 ## SVGライブラリ
-> http://svgjs.com/getting-started/
+> "http://svgjs.com/getting-started/"
 
 ## localstorageライブラリ
 
 
-## node の実行環境の構築
-# 
-gulp
 
 
 
