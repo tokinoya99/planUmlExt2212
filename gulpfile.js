@@ -1,4 +1,8 @@
 var gulp = require('gulp');
+var less = require('gulp-less');
+var concatCss = require('gulp-concat-css');
+var replace = require('gulp-replace');
+
 var path = require('path');
 var babel = require('gulp-babel');
 var runSequence = require('run-sequence');
@@ -15,6 +19,19 @@ gulp.task("babel" , function(){
     .pipe(gulp.dest("./"));
 })
 
+gulp.task("less" , function(){
+    return gulp.src([
+      './src/style/less/*.less'
+      ,"./src/node_modules/semantic/semantic.css"
+      ,"./src/node_modules/editor/codemirror.css"
+    ])
+    .pipe(less())
+    .pipe(concatCss("bundle.css"))
+    .pipe(replace('../../node_modules/semantic/themes/', './themes/'))
+    .pipe(gulp.dest("./client/common/css/"));
+})
+
+
 gulp.task("webpack" , function(){
   return webpackStream(webpackConfig , webpack).pipe(gulp.dest('./client/common/js'));
 })
@@ -22,11 +39,12 @@ gulp.task("webpack" , function(){
 
 gulp.task('watch', function() {
   //変更監視
-  gulp.watch(['./*/*.es6' , './*/node_modules/*/*.es6'] , function(event){
+  gulp.watch(['./*/*.es6' , './*/node_modules/*/*.es6' , './src/style/less/*.less'] , function(event){
     console.log('File ' + event.path + ' was ' + event.type);
     //console.log(event.path);
     runSequence(
       "babel"
+      ,"less"
       ,"webpack"
     )
   })
