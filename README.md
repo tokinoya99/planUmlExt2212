@@ -1,4 +1,4 @@
-# UwiUML（インスパイアPlantUML）
+# planUMLEx（インスパイアPlantUML）
 
 ## 間違ってもいいので一回作ってみるよ
 
